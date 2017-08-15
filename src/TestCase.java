@@ -11,10 +11,10 @@ public class TestCase implements Test {
 	}
 
 	@Override
-	public void test() {
+	public void run() {
 		setUp();
 		try {
-			testBare();
+			runBare();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -23,7 +23,7 @@ public class TestCase implements Test {
 
 	}
 
-	public void testBare()
+	public void runBare()
 	{
 		try {
 			Method method = getClass().getDeclaredMethod(fName, null);
@@ -49,7 +49,7 @@ public class TestCase implements Test {
 	}
 
 	@Override
-	public int countTest() {
+	public int countTestCase() {
 		return 1;
 	}
 
