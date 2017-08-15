@@ -8,8 +8,17 @@ public class Demo {
 	public static void main(String[] args) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		try {
 			Class clazz = Class.forName("ReflectDemo.ReflctDemo");
-			Method[] m1	 = clazz.getDeclaredMethods();
-			m1[1].invoke(new ReflctDemo(),new Object[]{3,"3"});
+			try {
+				System.out.println(clazz.getConstructor(String.class));
+			} catch (NoSuchMethodException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Method[] m1	 = clazz.getDeclaredMethods();
+			//m1[1].invoke(new ReflctDemo(),new Object[]{3,"3"});
 //			for(Method method:m1)
 //				System.out.println(method.getName());
 //			Method[] m2	 = clazz.getMethods();

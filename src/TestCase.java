@@ -5,8 +5,11 @@ public class TestCase implements Test {
 
 	String fName;
 
+	public TestCase() {
+		
+	}
 	// 构造器,fName是方法名称
-	TestCase(String fName) {
+	public TestCase(String fName) {
 		this.fName = fName;
 	}
 

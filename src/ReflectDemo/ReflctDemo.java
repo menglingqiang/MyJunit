@@ -1,6 +1,9 @@
 package ReflectDemo;
 
 public class ReflctDemo {
+	 ReflctDemo(String name) {
+		
+	}
 	public void run(String test,int i)
 	{
 		System.out.println(test+i);

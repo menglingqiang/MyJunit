@@ -11,15 +11,15 @@ public class TestSuite implements Test{
 	public TestSuite(Class clazz) {
 		this.name = clazz.getName();
 		testCases = new Vector<Test>();
-		Constructor constructor = getTestConstructor();
-		Method[] methods = getClass().getDeclaredMethods();
+		Constructor constructor = getTestConstructor(clazz);
+		Method[] methods = clazz.getDeclaredMethods();
 		for(int i=0;i<methods.length;i++)
 			addTest(methods[i],constructor);
 	}
-	public Constructor getTestConstructor()
+	public Constructor getTestConstructor(Class clazz)
 	{
 		try {
-			return getClass().getConstructor(String.class);
+			return clazz.getConstructor(String.class);
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {
