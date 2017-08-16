@@ -13,8 +13,9 @@ public class DemoMain extends TestCase{
 	}
 	
 	public static void main(String[] args) {
+		TestResult tr = new TestResult();
 		TestSuite testSuite = new TestSuite(DemoMain.class);
-		testSuite.run();
+		testSuite.run(tr);
 	}
 	
 }

@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Vector;
 
-public class TestSuite implements Test{
+public class TestSuite extends Assert implements Test{
 
 	String name;
 	Vector<Test> testCases;
@@ -73,10 +73,10 @@ public class TestSuite implements Test{
 	}
 	
 	@Override
-	public void run() {
+	public void run(TestResult result) {
 		for(Test test:testCases)
 		{
-			test.run();
+			result.run((TestCase)test);
 		}
 		
 	}

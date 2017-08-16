@@ -1,7 +1,7 @@
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class TestCase implements Test {
+public class TestCase extends Assert implements Test {
 
 	String fName;
 
@@ -13,8 +13,11 @@ public class TestCase implements Test {
 		this.fName = fName;
 	}
 
-	@Override
-	public void run() {
+	public void run(TestResult tr)
+	{
+		tr.run(this);
+	}
+	public void doRun() {
 		setUp();
 		try {
 			runBare();
